@@ -6,7 +6,7 @@ import { ClipLoader } from "react-spinners";
 
 function Login() {
 
-    const navigate = useNavigate ();
+    const navigate = useNavigate();
 
     const { usuario, handleLogin, isLoading } = useContext (AuthContext);
 
@@ -22,14 +22,14 @@ function Login() {
 
     function atualizarEstado (e: ChangeEvent<HTMLInputElement>) {
         setUsuarioLogin ({
-            ...usuario,
+            ...usuarioLogin,
             [e.target.name]: e.target.value
         })
     }
 
     function login(e: FormEvent<HTMLFormElement>) {
         e.preventDefault ()
-        handleLogin (usuario)
+        handleLogin(usuarioLogin)
     }
 
     return (
@@ -47,7 +47,7 @@ function Login() {
                             placeholder="Usuario"
                             className="border-2 border-slate-700 rounded p-2"
                             value = {usuarioLogin.usuario}
-                            onChange = {(e: ChangeEvent<HTMLInputElement>) => atualizarEstado (e)}
+                            onChange = {(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 
                         />
                     </div>
@@ -60,7 +60,7 @@ function Login() {
                             placeholder="Senha"
                             className="border-2 border-slate-700 rounded p-2"
                             value = {usuarioLogin.senha}
-                            onChange = {(e: ChangeEvent<HTMLInputElement>) => atualizarEstado (e)}
+                            onChange = {(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 
                         />
                     </div>
